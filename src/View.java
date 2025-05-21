@@ -1,21 +1,5 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
-
-//JavaDoc
-/**
- * @author Grupo 1
- * @version 1.0
- * @since 2025-5-25
- * @see Model
- * @see Coche
- * @see Controller
- * @see Controller2
- * @see View
- */
-
-
-
-
 
 /**
  * Clase encargada de la interacción con el usuario
@@ -43,7 +27,6 @@ public class View {
                         // Mostrar la velocidad de cada coche
                         System.out.println(e.matricula + ": " + e.velocidad + "km/hr");
                     }
-                    // Mostrar la velocidad de cada coche
                     break;
                 case 2:
 

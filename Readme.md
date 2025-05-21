@@ -43,11 +43,7 @@ sequenceDiagram
     View->>View:Mostrando Velocidad Cambiada
     deactivate View
     deactivate View
-    View->>View:4.Salir
-   
-
-    
-    
+    View-->View:Salendo...
     
 
 ```

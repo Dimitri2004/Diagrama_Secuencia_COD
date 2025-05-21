@@ -38,7 +38,7 @@ public class View {
         while (op != 4) {
             switch (op) {
                 case 1:
-                    Controller2.Inicio();
+                    Controller2.crearCoche();
                     for (Coche e : Model.parking) {
                         // Mostrar la velocidad de cada coche
                         System.out.println(e.matricula + ": " + e.velocidad + "km/hr");

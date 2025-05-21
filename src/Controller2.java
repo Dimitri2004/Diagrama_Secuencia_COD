@@ -1,6 +1,6 @@
 public class Controller2 {
 
-    public static void  Inicio() {
+    public static void  crearCoche() {
         Model.crearCoche( "LaFerrari", "SBC 1234");
         Model.crearCoche( "LaSusana", "STV 4567");
     }

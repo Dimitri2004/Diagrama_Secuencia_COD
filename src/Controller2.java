@@ -11,7 +11,7 @@ public class Controller2 {
     }
         public static void aumentarVel() {
         // Aumentar la velocidad del coche1
-        String matricula = Model.parking.getFirst().matricula;
+        String matricula = Model.parking.get(0).matricula;
         int aumento = 20;
         int velocidadAumentada = Model.aumentarVelocidad(matricula, aumento);
 
@@ -19,7 +19,7 @@ public class Controller2 {
         }
     public static void disminuirVel() {
         // Disminuir la velocidad del coche1
-        String matricula = Model.parking.getFirst().matricula;
+        String matricula = Model.parking.get(0).matricula;
         int reducir = 10;
         int velocidadDisminuida = Model.reducirVelocidad(matricula, reducir);
         View.muestraVelocidad(matricula, velocidadDisminuida);

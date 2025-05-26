@@ -1,8 +1,7 @@
 public class Controller2 {
 
     public static void  crearCoche() {
-        Model.crearCoche( "LaFerrari", "SBC 1234");
-        Model.crearCoche( "LaSusana", "STV 4567");
+        Model.crearCoche( "LaFerrari", "SBC1234");
     }
     public static void visualizarVelocida(String matricula) {
         //Saca coche con mstriculs
@@ -24,4 +23,16 @@ public class Controller2 {
         int velocidadDisminuida = Model.reducirVelocidad(matricula, reducir);
         View.muestraVelocidad(matricula, velocidadDisminuida);
     }
+    public static void buscarCoche(String matricula){
+        //Creamos un coche con la matricula recibida
+        Coche coche=Model.getCoche(matricula);
+        //Si coche existe, que es el caso, nos movemos por parking y seleccionamos el modelo del coche
+        if (coche!=null){
+            System.out.println("Coche encontrado : "+coche.modelo);
+        }else{
+            System.out.println("Coche no encontrado");
+        }
+
+    }
+
 }

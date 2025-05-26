@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class View {
     /**
      * Menu inicial que dependiendo de la opción acceda a mecanicas del Controller
+     *
+     * @return resultado por terminal
      */
     public static void menu() {
         System.out.println("1.mostrar coches parking con velocidad");
@@ -50,8 +52,9 @@ public class View {
                 case 4:
                     //pedimos datos por terminal para realizar busqueda
                     System.out.println("Dime la matricula a buscar :");
-                    String mat=sc.next().trim();
-                    Controller2.buscarCoche(mat);
+                    String mat=sc.next();
+
+                    System.out.println("El modelo del coche encontrado es : "+Controller2.buscarCoche(mat));
                     break;
                 default:
                     System.out.println("Opcion no valida");
@@ -67,6 +70,12 @@ public class View {
 
     }
 
+    /**
+     * Metodo que devuelve la matricula y velocidad del coche dado
+     * @param matricula
+     * @param velocidad
+     * @return matricula y velocidad (en caso de haberse modificado apareceran actualizadas)
+     */
     public static boolean muestraVelocidad( String matricula, int velocidad) {
         //muestra velocidad
         System.out.println("La velocidad del coche con matricula " + matricula + " es: " + velocidad + "km/hr");

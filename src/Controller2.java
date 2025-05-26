@@ -6,7 +6,6 @@ public class Controller2 {
         Model.crearCoche( "LaFerrari", "SBC1234");
         Model.crearCoche( "Lamborghini", "SRG3456");
     }
-
     /**
      * Metodo para poder veer la velocidad del coche creado
      * @param matricula

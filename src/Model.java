@@ -12,8 +12,8 @@ public class Model {
      * @param matricula identificador unico
      * @return el coche creado
      */
-    public static Coche crearCoche(String modelo, String matricula){
-        Coche aux = new Coche(modelo, matricula);
+    public static Coche crearCoche(String modelo, String matricula,Integer gasolina){
+        Coche aux = new Coche(modelo, matricula,gasolina);
         parking.add(aux);
         return aux;
     }
@@ -33,6 +33,16 @@ public class Model {
         }
         return aux;
     }
+    //Actualice la clase Coche añdiendole una nueva variable llamada deposito y a esta se la asigne al nuevo coche que se cree
+    public static Integer getGasolina(String modelo ,String matricula,Integer gasolina){
+        Coche aux= new Coche(modelo,matricula,gasolina);
+            if (aux.matricula.equals(matricula)) {
+                return gasolina;
+            }
+            else return null;
+
+    }
+
     /**
      * Cambia la velocidad de un coche
      * @param matricula

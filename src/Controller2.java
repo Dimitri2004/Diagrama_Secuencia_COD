@@ -3,11 +3,11 @@ public class Controller2 {
      * Metodo que llama al model para crear coche
      */
     public static void  crearCoche() {
-        Model.crearCoche( "LaFerrari", "SBC1234");
-        Model.crearCoche( "Lamborghini", "SRG3456");
+        Model.crearCoche( "LaFerrari", "SBC1234",200);
+        Model.crearCoche( "Lamborghini", "SRG3456",200);
     }
     /**
-     * Metodo para poder veer la velocidad del coche creado
+     * Metodo para poder ver la velocidad del coche creado
      * @param matricula
      * Despues de pedir velocidad al model lo devolvemos a la view para sacarla por terminal
      */
@@ -45,5 +45,19 @@ public class Controller2 {
             }
         }
         return null;
+    }
+    //aplique un int restante para asi cuando me de los datos de la matricula y modelo yo devuelva el deposito inicialmente lleno y posteriromente le quite lo que le queda y le diga lo que gasto en la view
+    public static Integer depositoGastado(int restante){
+        String modelo=Model.parking.get(0).modelo;
+        String matricula=Model.parking.get(0).matricula;
+        return Model.getGasolina(modelo,matricula,Model.getGasolina(modelo,matricula,200)-restante);
+
+    }
+    public static Integer metrosAvanzados(String matricula,int tiempo){
+        int velocidad=Model.getVelocidad(matricula);
+        if (velocidad==0){
+            return 0;
+        }
+        return velocidad*tiempo;
     }
 }

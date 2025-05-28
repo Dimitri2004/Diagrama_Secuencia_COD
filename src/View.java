@@ -15,14 +15,15 @@ public class View {
         System.out.println("2.Mostrar velocidad");
         System.out.println("3.Cambiar velocidad");
         System.out.println("4.Buscar coche");
-        System.out.println("5.Salir");
+        System.out.println("5.Deposito");
+        System.out.println("6.Salir");
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Elige opcion");
         int op = sc.nextInt();
 
         //repetir menu hasta que el usuario elija salir
-        while (op != 5) {
+        while (op != 8) {
             switch (op) {
                 case 1:
                     Controller2.crearCoche();
@@ -56,6 +57,21 @@ public class View {
 
                     System.out.println("El modelo del coche encontrado es : "+Controller2.buscarCoche(mat));
                     break;
+                case 5:
+                    System.out.println("Cuanta gasolina te queda :");
+                    int g= sc.nextInt();
+                    System.out.println("Gastaste esta cantidad de gasolina : "+ Controller2.depositoGastado(g));
+                    break;
+                case 6:
+                    System.out.println("De que coche quieres saber lo que avanzaste, dime su matricula :");
+                    String mat3= sc.next();
+                    System.out.println("Durante cuanto tiempo estuviste moviendote en (h)");
+                    int t=sc.nextInt();
+
+                    System.out.println("Avanzaste :"+Controller2.metrosAvanzados(mat3,t)+ " m");
+                    break;
+
+
                 default:
                     System.out.println("Opcion no valida");
 
@@ -79,7 +95,6 @@ public class View {
     public static boolean muestraVelocidad( String matricula, int velocidad) {
         //muestra velocidad
         System.out.println("La velocidad del coche con matricula " + matricula + " es: " + velocidad + "km/hr");
-
         return true;
     }
 }
